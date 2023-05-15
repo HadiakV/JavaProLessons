@@ -1,0 +1,24 @@
+package main.java.DailyJournals.HM_2;
+import static main.java.DailyJournals.HM_2.NumberOfPlayer.getNumberOfPlayers;
+import static main.java.DailyJournals.HM_2.ShuflerDeck.getShuffledDeck;
+
+public class main {
+    public static void main(String[] args) {
+        final int cardsForPlayer = 5;
+
+        int players = getNumberOfPlayers(cardsForPlayer);
+
+        String[] deck = getShuffledDeck();
+
+        main.dealCards(players, cardsForPlayer, deck);
+    }
+    public static void dealCards(int players, int cardsForPlayer, String[] deck) {
+        for (int i = 0; i < players * cardsForPlayer; i++) {
+            System.out.println(deck[i]);
+
+            if (i % cardsForPlayer == cardsForPlayer - 1) {
+                System.out.println();
+            }
+        }
+    }
+}
